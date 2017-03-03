@@ -1,10 +1,9 @@
-=================================================================
-                     Crystal usage in Geant4
-=================================================================
-            Enrico Bagli - INFN (Italy)
-			 bagli@fe.infn.it
+#Crystal usage in Geant4
 
-1. INTRODUCTION
+Enrico Bagli - INFN (Italy)
+bagli@fe.infn.it
+
+##1. INTRODUCTION
 This example shows how to add extension to a `G4Material` and use them in a process.
 The application requires [Geant4 10.3](www.geant4.org). Geant4 is a toolkit for the simulation of the passage of particles through matter. Its areas of application include high energy, nuclear and accelerator physics, as well as studies in medical and space science. The three main reference papers for Geant4 are:
 - [Nuclear Instruments and Methods in Physics Research A 506 (2003) 250-303](http://www.sciencedirect.com/science/article/pii/S0168900203013688)
@@ -14,7 +13,7 @@ The application requires [Geant4 10.3](www.geant4.org). Geant4 is a toolkit for 
 The source code can be found on the [Geant4 10.3](www.geant4.org) website or on [GitHub](https://github.com/Geant4/geant4/tree/geant4-10.3-release). After the installation of the Geant4 10.3 libraries, the code can be compiled via [CMake](www.cmake.org).
 The project has been financed by the INFN under the INFN-CSNV-GECO project.
 
-2. SETUP
+##2. SETUP
 The setup is composed by two close cubes of 1x1x1 mm3 made of:
 - Amorphous Silicon
 - Crystal Silicon
@@ -24,17 +23,17 @@ Then, two extensions are added to the `G4ExtendedMaterial`:
 - `G4CrystalExtension` that collects the basic information of the crystal structure.
 - `MaterialExtensionData` that collects the information needed by the `CrystalProcess` process.
 
-3. PRIMARY EVENT
+##3. PRIMARY EVENT
 The `geantino` particles are used.
 
-4. PHYSICS
+##4. PHYSICS
 The `CrystalPhysics` is added to the `QGSP_BERT` physics list in the `crystal.cc` main file.
 The `CrystalPhysics` class attach the `CrystalProcess` to all the particles.
 The `CrystalProcess` check if the logical volume is a `G4LogicalCrystalVolume` or a `G4LogicalVolume`:
 If the logical volume is a `G4LogicalCrystalVolume`, the process prints the crystal space group and the the value stored in the `MaterialExtensionData` attached to the Silicon crystal.
 
 
-5. EXECUTION & OUTPUT 
+##5. EXECUTION & OUTPUT 
 The example can be executed with the command line
 `./crystal crystal.in`
 
