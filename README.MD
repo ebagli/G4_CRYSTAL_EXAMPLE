@@ -1,4 +1,4 @@
-# Crystal usage in Geant4
+# Crystal usage example in Geant4
 
 Enrico Bagli - INFN (Italy)
 bagli@fe.infn.it
