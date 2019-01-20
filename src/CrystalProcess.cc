@@ -28,6 +28,7 @@
 #include "MaterialExtensionData.hh"
 #include "G4CrystalExtension.hh"
 #include "G4LogicalCrystalVolume.hh"
+#include "G4ExtendedMaterial.hh"
 
 CrystalProcess::
 CrystalProcess(const G4String& aName):
